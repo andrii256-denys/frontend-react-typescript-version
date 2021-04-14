@@ -1,12 +1,12 @@
 import React from 'react';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import { nominativeCase } from '../../linguistics/categoriesNames';
-import { CategoryType } from '../../types/linguistics';
 
 import './MainScreen.scss';
 
 export const MainScreen: React.FunctionComponent = () => {
-	const category: CategoryType = 'buckwheat';
+	const { currentTab: category } = useTypedSelector(state => state.navigation);
 	return (
 		<article className={`MainScreen MainScreen--${category}`}>
 			<p className="MainScreen__title">
