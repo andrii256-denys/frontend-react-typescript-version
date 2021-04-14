@@ -15,7 +15,7 @@ export const RadarPreloader: React.FunctionComponent<RadarPreloaderPropsType> = 
 					<stop offset="0%" stopColor="#000000" />
 					<stop offset="100%" stopColor="#ffffff" />
 				</linearGradient>
-				<path fill="url(#RadarPreloader_linear-gradient)" fill-opacity="0.5" d="M65.128,64.894l0.025,60.968a61.781,61.781,0,0,1-32.011-8.315q-0.705-.406-1.4-0.83L62.531,63.4Z" />
+				<path fill="url(#RadarPreloader_linear-gradient)" fillOpacity="0.5" d="M65.128,64.894l0.025,60.968a61.781,61.781,0,0,1-32.011-8.315q-0.705-.406-1.4-0.83L62.531,63.4Z" />
 				<animateTransform attributeName="transform" type="rotate" from="0 64 64" to="360 64 64" dur="1710ms" repeatCount="indefinite"></animateTransform>
 				<path fill="#000000" d="M62.531,63.4l2.6,1.5L34.257,118.374l-2.6-1.5Z" />
 			</g>
