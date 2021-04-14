@@ -1,4 +1,3 @@
-import { Dispatch } from 'react';
 import { POSSIBLE_CATEGORIES } from '../../constants/POSSIBLE_CATEGORIES';
 import { CategoryType } from '../../types/CategoryType';
 import { NavigationAction, NavigationActionsTypes } from '../../types/navigation';

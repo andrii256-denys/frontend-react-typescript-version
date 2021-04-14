@@ -5,6 +5,7 @@ import { NOMINATIVE_CASE } from '../../constants/linguistics';
 import { Navigation } from '../Navigation';
 
 import './MainScreen.scss';
+import { Central } from '../Central';
 
 export const MainScreen: React.FunctionComponent = () => {
 	const { currentTab: category } = useTypedSelector(state => state.navigation);
@@ -15,7 +16,7 @@ export const MainScreen: React.FunctionComponent = () => {
 			</p>
 
 			<div className="MainScreen__second-row">
-				Main Square
+				<Central />
 				<Navigation />
 			</div>
 		</article>
