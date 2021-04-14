@@ -5,7 +5,7 @@
 	flex-direction: column;
 
 	height: 99.9vh;
-	background: $color_default--dark cover / contain no-repeat;
+	background: $color_default--dark center / cover no-repeat;
 
 	@media (max-width: $mediapoint_general--big-laptop) {
 		height: auto;
