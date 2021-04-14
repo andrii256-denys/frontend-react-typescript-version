@@ -1,4 +1,4 @@
-import { CategoryType } from "./linguistics";
+import { CategoryType } from "./CategoryType";
 
 
 export interface NavigationState {

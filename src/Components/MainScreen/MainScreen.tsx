@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-import { nominativeCase } from '../../linguistics/categoriesNames';
+import { NOMINATIVE_CASE } from '../../constants/linguistics';
 import { Navigation } from '../Navigation';
 
 import './MainScreen.scss';
@@ -11,7 +11,7 @@ export const MainScreen: React.FunctionComponent = () => {
 	return (
 		<article className={`MainScreen MainScreen--${category}`}>
 			<p className="MainScreen__title">
-				{nominativeCase[category]}
+				{NOMINATIVE_CASE[category]}
 			</p>
 
 			<div className="MainScreen__second-row">
