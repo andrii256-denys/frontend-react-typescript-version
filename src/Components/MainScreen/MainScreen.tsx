@@ -2,6 +2,7 @@ import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import { nominativeCase } from '../../linguistics/categoriesNames';
+import { Navigation } from '../Navigation';
 
 import './MainScreen.scss';
 
@@ -14,7 +15,8 @@ export const MainScreen: React.FunctionComponent = () => {
 			</p>
 
 			<div className="MainScreen__second-row">
-				second row here
+				Main Square
+				<Navigation />
 			</div>
 		</article>
 	)
