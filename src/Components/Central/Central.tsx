@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { RadarPreloader } from '../RadarPreloader';
 import { useActions } from '../../hooks/useActions'
+import { CHEAPER_CASUS_GENETIVUS } from '../../constants/linguistics';
 
 import './Central.scss';
 
@@ -18,7 +19,7 @@ export const Central: React.FunctionComponent = () => {
 	return (
 		<section className="Central">
 			<h1 className="Central__title">
-				Ціна {'найдешевшої гречки'} в Україні
+				Ціна {CHEAPER_CASUS_GENETIVUS[currentTab]} в Україні
 			</h1>
 			<p className={`Central__price-wrapper Central__price-wrapper--${currentTab}`}>
 				<span className="Central__digits">
