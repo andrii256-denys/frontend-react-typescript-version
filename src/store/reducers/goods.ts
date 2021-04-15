@@ -1,4 +1,4 @@
-import { GoodsActionsTypes, GoodsActionType, GoodsState, CheaperType } from "../../types/goods";
+import { GoodsActionsTypes, GoodsActionType, GoodsState } from "../../types/goods";
 
 const initialState: GoodsState = {
 	cheaper: {

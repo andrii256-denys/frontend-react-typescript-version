@@ -12,9 +12,11 @@ export const Central: React.FunctionComponent = () => {
 	const { currentTab } = useTypedSelector(state => state.navigation);
 	const { fetchCheaper } = useActions();
 
+	/* eslint-disable */
 	useEffect(() => {
 		fetchCheaper(currentTab)
 	}, [currentTab]);
+	/* eslint-enable */
 
 	return (
 		<section className="Central">
