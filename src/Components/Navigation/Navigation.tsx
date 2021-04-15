@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { CategoryType } from '../../types/CategoryType';
-import { NOMINATIVE_CASE } from '../../constants/linguistics';
+import { CASUS_NOMINATIVUS } from '../../constants/linguistics';
 import { POSSIBLE_CATEGORIES } from '../../constants/POSSIBLE_CATEGORIES';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
@@ -26,7 +26,7 @@ const Link: React.FunctionComponent<LinkPropsType> = ({ itsCategory, activeCateg
 				className={`Navigation__button Navigation__button--${activeCategory}-mode`}
 				onClick={() => updateCategory(itsCategory)}
 			>
-				{NOMINATIVE_CASE[itsCategory]}
+				{CASUS_NOMINATIVUS[itsCategory]}
 			</button>
 		</li>
 	)
