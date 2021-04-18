@@ -58,4 +58,29 @@
 		display: inline-block;
 		margin-right: 50px;
 	}
+
+	&__filters-toggler {
+		$filtersToggler: &;
+		$box-shadow--hover: 0px 4px 4px rgb(0, 0, 0);
+		$box-shadow--focus: 0px 0px 0px 3px $color_general--light;
+
+		all: unset;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 12px 0;
+		width: 150px;
+		color: $color_general--light;
+		font-size: 14px;
+		line-height: 17px;
+		background: linear-gradient(0deg, #511d0f 0%, #ba8375 100%);
+		border-radius: 15px;
+		cursor: pointer;
+		transition-duration: 0.2s;
+
+		&:focus,
+		&:hover {
+			box-shadow: $box-shadow--focus;
+		}
+	}
 }
