@@ -40,12 +40,18 @@ const Good: React.FunctionComponent<GoodProps> = ({ isLoading, link, pictureLink
 
 export const Goods: React.FunctionComponent = () => {
 	const { goods, goods: { goodsList } } = useTypedSelector(state => state.goods);
+	const { currentTab } = useTypedSelector(state => state.navigation)
 
 	const { fetchGoods } = useActions();
 
 	useEffect(() => {
 		fetchGoods();
 	}, [])
+
+	useEffect(() => {
+		fetchGoods();
+	},
+	[currentTab])
 
 	return (
 		<ul className={classNames({
