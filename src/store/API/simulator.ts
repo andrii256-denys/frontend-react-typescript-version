@@ -113,7 +113,7 @@ export const goodsFetch = (url: string) => {
 		return responsePromise;
 	}
 
-	if (url === 'want.error' || !(Date.now() % 5)) {
+	if (!(Date.now() % 500)) {
 		throw new Error('shit happens')
 	} else {
 		return wrapDataInPromise([

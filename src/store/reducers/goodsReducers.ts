@@ -17,6 +17,8 @@ const initialState: GoodsState = {
 				pricePerKg: 50,
 				shopName: 'Таврія В',
 				weight: 800,
+				link: 'http://shit.com',
+				title: 'Гордон в шоколаді'
 			}
 		]
 	}
