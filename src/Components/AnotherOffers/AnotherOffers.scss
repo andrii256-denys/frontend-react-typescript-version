@@ -82,5 +82,9 @@
 		&:hover {
 			box-shadow: $box-shadow--focus;
 		}
+
+		&:active {
+			transform: scale(0.98);
+		}
 	}
 }
