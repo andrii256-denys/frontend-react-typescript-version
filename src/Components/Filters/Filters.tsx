@@ -2,12 +2,14 @@ import React, { ChangeEvent, useState } from 'react';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { NumberInput } from '../NumberInput';
+import { Switch } from '../Switch';
+import { Toggler } from '../Toggler/Toggler';
 
 import './Filters.scss';
 
 export const Filters: React.FunctionComponent = () => {
-	const { updateMinPrice, updateMaxPrice } = useActions();
-	const { price } = useTypedSelector(state => state.filters);
+	const { updateMinPrice, updateMaxPrice, invertSortDirection, updateListOfShops } = useActions();
+	const { price, sortDirection, shops } = useTypedSelector(state => state.filters);
 
 	const priceLimitations = {
 		min: 0,
@@ -64,16 +66,28 @@ export const Filters: React.FunctionComponent = () => {
 
 			<div className="Filters__container Filters__row">
 				<h3 className="Filters__title">Сортувати</h3>
-				switch
+				&nbsp;&nbsp;
+				<Switch
+					direction={sortDirection}
+					labelWhenUp="спершу Дешевші"
+					labelWhenDown="спершу Дорожі"
+					onClick={invertSortDirection}
+					customClassNames="Filters__switch"
+				/>
 			</div>
 
 			<div className="Filters__container">
 				<h3 className="Filters__title">Доступні магазини:</h3>
-				<div className="Filters__shops-box">
-					toggler label ATB * x
-					<span>1</span>
-					<span>2</span>
-				</div>
+				<ul className="Filters__shops-box">
+					{shops.map(shop => (
+						<Toggler
+							key={shop.id}
+							checked={shop.allowed}
+							onChange={() => { updateListOfShops(shop.id) }}
+							rightLable={shop.humanName}
+						/>
+					))}
+				</ul>
 			</div>
 		</section>
 	);

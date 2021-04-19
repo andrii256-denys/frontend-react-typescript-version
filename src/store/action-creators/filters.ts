@@ -19,3 +19,14 @@ export const updateMaxPrice = (newMax: number): FiltersAction => {
 		payload: newMax,
 	}
 }
+export const invertSortDirection = (): FiltersAction => {
+	return {
+		type: FiltersActionsTypes.INVERT_SORT_DIRECTION
+	}
+}
+export const updateListOfShops = (id: string): FiltersAction => ({
+	type: FiltersActionsTypes.UPDATE_LIST_OF_SHOPS,
+	payload: {
+		id: id,
+	}
+})
