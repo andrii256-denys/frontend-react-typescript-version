@@ -1,0 +1,39 @@
+@import "../../styles/variables/index.scss";
+
+.PressfullButton {
+	$PressfullButton-radius: 17px;
+
+	all: unset;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding: 15px 30px;
+	color: $color_general--light;
+	font-family: inherit;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 18px;
+	background: #511d0f;
+	box-shadow: inset 8px 6px 8px 1px #330b00, inset -5px -6px 6px 1px #863823;
+	border-radius: $PressfullButton-radius;
+	cursor: pointer;
+	user-select: none;
+
+	&--pressed {
+		color: #511d0f;
+		background: #f0c792;
+		box-shadow: inset 8px 6px 8px 1px #ad7c3b, inset -5px -5px 5px 3px #e1b780;
+	}
+
+	&:focus::after, &:hover::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		border-radius: $PressfullButton-radius;
+		box-shadow: 0px 0px 0px 3px rgba(81, 29, 15, 0.671);
+	}
+}
