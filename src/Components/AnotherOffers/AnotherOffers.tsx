@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Filters } from '../Filters';
+import { Goods } from '../Goods';
 
 import './AnotherOffers.scss';
 
 export const AnotherOffers: React.FunctionComponent = () => {
-	const { currentTab } = useTypedSelector(state => state.navigation)
-	const { isVisible: isFiltersVisible } = useTypedSelector(state => state.filters)
+	const { currentTab } = useTypedSelector(state => state.navigation);
+	const { isVisible: isFiltersVisible } = useTypedSelector(state => state.filters);
 	const { updateFiltersVisibility } = useActions();
 
 	return (
@@ -26,7 +27,7 @@ export const AnotherOffers: React.FunctionComponent = () => {
 			</div>
 			{isFiltersVisible && <Filters />}
 			<div className="AnotherOffers__bottom-row">
-				Products should be here
+				<Goods />
 			</div>
 		</article>
 	);

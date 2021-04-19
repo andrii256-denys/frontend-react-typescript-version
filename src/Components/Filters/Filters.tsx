@@ -8,8 +8,9 @@ import { Toggler } from '../Toggler/Toggler';
 import './Filters.scss';
 
 export const Filters: React.FunctionComponent = () => {
-	const { updateMinPrice, updateMaxPrice, invertSortDirection, updateListOfShops } = useActions();
+	const { updateMinPrice, updateMaxPrice, invertSortDirection, updateListOfShops, fetchGoods } = useActions();
 	const { price, sortDirection, shops } = useTypedSelector(state => state.filters);
+	const { currentTab } = useTypedSelector(state => state.navigation)
 
 	const priceLimitations = {
 		min: 0,
@@ -29,7 +30,7 @@ export const Filters: React.FunctionComponent = () => {
 				if (newValue > price.max) {
 					updateMaxPrice(newValue);
 				}
-				// updateGoodsList
+				fetchGoods();
 			}, DELAY))
 		} else if (type === 'max') {
 			updateMaxPrice(newValue);
@@ -37,13 +38,13 @@ export const Filters: React.FunctionComponent = () => {
 				if (newValue < price.min) {
 					updateMinPrice(newValue)
 				}
-				// updateGoodsList
+				fetchGoods();
 			}, DELAY))
 		}
 	}
 
 	return (
-		<section className="Filters">
+		<section className={`Filters Filters--${currentTab}`}>
 			<div className="Filters__container Filters__row">
 				<h3 className="Filters__title">Ціна</h3>
 				&nbsp;від&nbsp;
@@ -71,7 +72,7 @@ export const Filters: React.FunctionComponent = () => {
 					direction={sortDirection}
 					labelWhenUp="спершу Дешевші"
 					labelWhenDown="спершу Дорожі"
-					onClick={invertSortDirection}
+					onClick={() => { invertSortDirection(); fetchGoods(); }}
 					customClassNames="Filters__switch"
 				/>
 			</div>
@@ -83,7 +84,7 @@ export const Filters: React.FunctionComponent = () => {
 						<Toggler
 							key={shop.id}
 							checked={shop.allowed}
-							onChange={() => { updateListOfShops(shop.id) }}
+							onChange={() => { updateListOfShops(shop.id); fetchGoods(); }}
 							rightLable={shop.humanName}
 						/>
 					))}
