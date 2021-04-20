@@ -1,0 +1,52 @@
+@import "../../styles/variables/index.scss";
+
+.Footer {
+	display: grid;
+	justify-content: space-between;
+	grid-template-columns: repeat(3, 1fr);
+	padding-top: 145px;
+	padding-bottom: 10px;
+	background-color: #FFEFCF;
+	color: #6b280d;
+	& a {
+		color: #910c07;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__source-code {
+		font-size: 16px;
+	}
+
+	&__center {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 100px;
+		text-align: center;
+	}
+
+	&__main-text {
+		font-size: 18px;
+		line-height: 1.5;
+	}
+	&__author {
+		font-weight: 600;
+	}
+
+	&__year-mark {
+		margin-top: 15px;
+		font-size: 16px;
+	}
+
+	&__right {
+		text-align: right;
+	}
+}
