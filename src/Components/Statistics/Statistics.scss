@@ -1,0 +1,15 @@
+@import "../../styles/variables/index.scss";
+
+.Statistics {
+	&__title {
+		margin-top: 60px;
+		margin-bottom: 55px;
+	}
+
+	&__chart-container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
