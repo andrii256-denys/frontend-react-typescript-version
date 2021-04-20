@@ -3,10 +3,10 @@ import React from 'react';
 import './Footer.scss';
 
 export const Footer: React.FunctionComponent = () => (
-	<footer className="Footer restrictor">
+	<footer className="Footer restrictor1200">
 		<div className="Footer__left">
 			<p className="Footer__source-code">
-				дивитися source код
+				source код
 				&nbsp;
 				<a
 					href="https://github.com/andrii256-denysVarenik/grocceries-front"
@@ -17,7 +17,7 @@ export const Footer: React.FunctionComponent = () => (
 				</a>
 			</p>
 			<p className="Footer__source-code">
-				дивитися source код
+				source код
 				&nbsp;
 				<a
 					href="https://github.com/andrii256-denysVarenik/"
