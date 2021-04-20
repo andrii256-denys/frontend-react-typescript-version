@@ -1,0 +1,23 @@
+.Chart {
+	position: relative;
+
+	&__status-message {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 22px;
+		user-select: none;
+		cursor: auto;
+	}
+
+	&__wrapper {
+		&--hidden {
+			visibility: hidden;
+		}
+	}
+}
