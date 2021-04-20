@@ -1,5 +1,7 @@
 .Chart {
 	position: relative;
+	max-width: 90vw;
+	overflow: hidden;
 
 	&__status-message {
 		position: absolute;
