@@ -1,0 +1,17 @@
+@import "../../styles/variables/index.scss";
+
+.Statistics {
+	background: linear-gradient(359.35deg, #FFEFCF 0.53%, #fffcf6 99.41%);;
+
+	&__title {
+		padding-top: 60px;
+		margin-bottom: 55px;
+	}
+
+	&__chart-container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
