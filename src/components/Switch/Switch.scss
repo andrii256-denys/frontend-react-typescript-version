@@ -4,9 +4,8 @@
 	all: unset;
 
 	display: flex;
-	flex-start: flex-start;
 	justify-content: center;
-	align-content: start;
+	align-content: flex-start;
 	padding: 12px;
 	background: $color_general--light;
 	border-radius: 15px;
