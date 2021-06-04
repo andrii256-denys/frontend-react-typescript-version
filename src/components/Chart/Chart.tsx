@@ -25,12 +25,11 @@ export const Chart = () => {
 	const { currentTab } = useTypedSelector(state => state.navigation);
 	const { fetchChartData } = useActions();
 
-	const data = rawData.map(item => ({
-		...item,
-		date: `${MONTHS_NAMES.casusNominativus[item.date.getMonth()]} ${item.date.getFullYear()}`,
-	}))
-
-	console.log(data)
+	const data = rawData
+		.map(item => ({
+			...item,
+			date: `${item.date.getDate()} ${MONTHS_NAMES.casusGenetivus[item.date.getMonth()]}`,
+		}))
 
 	useEffect(() => {
 		fetchChartData();

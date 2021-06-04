@@ -5,7 +5,7 @@ type LinguisticType = {
 }
 
 export const CASUS_NOMINATIVUS: LinguisticType = { // this is Називний Відмінок in Ukrainian language
-	corn: 'Мамалига',
+	corn: 'Кукурузка',
 	buckwheat: 'Гречка',
 	rice: 'Рис',
 	barley: 'Ячмінь',
@@ -13,7 +13,7 @@ export const CASUS_NOMINATIVUS: LinguisticType = { // this is Називний �
 }
 
 export const CHEAPER_CASUS_GENETIVUS: LinguisticType = { // this is найдешевш.. Родовий відмінок in Ukrainian language
-	corn: 'найдешевшої мамалиги',
+	corn: 'найдешевшої кукурузки',
 	buckwheat: 'найдешевшої гречки',
 	rice: 'найдешевшого рису',
 	barley: 'найдешевшого ячменю',
@@ -26,7 +26,7 @@ export const MONTHS_NAMES = {
 		'Лютий',
 		'Березень',
 		'Квітень',
-		'Травнень',
+		'Травень',
 		'Червень',
 		'Липень',
 		'Серпень',
