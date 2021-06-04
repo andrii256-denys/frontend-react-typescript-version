@@ -9,17 +9,53 @@ const initialState: GoodsState = {
 	},
 	goods: {
 		isError: false,
-		isLoading: false,
+		isLoading: true,
 		goodsList: [
 			{
-				id: 1,
-				pictureLink: 'http://images.huffingtonpost.com/2015-07-08-1436374933-6373539-Buckwheat_600_x_450.jpg',
-				pricePerKg: 50,
-				shopName: 'Таврія В',
-				weight: 800,
-				link: 'http://shit.com',
-				title: 'Гордон в шоколаді'
-			}
+				id: Math.random(),
+				pictureLink: '#',
+				pricePerKg: 0,
+				shopName: 'Loading',
+				weight: 0,
+				link: '#',
+				title: 'Loading'
+			},
+			{
+				id: Math.random(),
+				pictureLink: '#',
+				pricePerKg: 0,
+				shopName: 'Loading',
+				weight: 0,
+				link: '#',
+				title: 'Loading'
+			},
+			{
+				id: Math.random(),
+				pictureLink: '#',
+				pricePerKg: 0,
+				shopName: 'Loading',
+				weight: 0,
+				link: '#',
+				title: 'Loading'
+			},
+			{
+				id: Math.random(),
+				pictureLink: '#',
+				pricePerKg: 0,
+				shopName: 'Loading',
+				weight: 0,
+				link: '#',
+				title: 'Loading'
+			},
+			{
+				id: Math.random(),
+				pictureLink: '#',
+				pricePerKg: 0,
+				shopName: 'Loading',
+				weight: 0,
+				link: '#',
+				title: 'Loading'
+			},
 		]
 	}
 }

@@ -1,7 +1,7 @@
 import { CategoryType } from "../../types/CategoryType";
 import { goodsFetch } from './simulators/goodsFetch';
 import { chartFetch } from './simulators/chartFetch';
-import { CheaperType } from "../../types/goods";
+import { CheaperType, GoodType } from "../../types/goods";
 import { StatisticsItem } from '../../types/statistics';
 
 const BASE_URL = 'http://plug.com';
@@ -26,11 +26,39 @@ export const getCheaper = async (category: CategoryType) => {
 export const getGoods = async (
 	minPrice: number,
 	maxPrice: number,
-	allowedShops: Array<string | number>, // array of id
+	restrictedShops: Array<string | number>, // array of id
 	sortOrder: 'up' | 'down',
+	category: CategoryType,
 ) => {
-	const response = await goodsFetch(`${BASE_URL}/goods?minprice=${minPrice}&maxprice=${maxPrice}${allowedShops}${sortOrder}etsetra, I'm lazy to write next`);
-	const data = await response.json();
+	const params = new URLSearchParams();
+
+	params.append('price', minPrice + '-' + maxPrice);
+	params.append('shops', restrictedShops.join(','));
+	params.append('limit', '150');
+	params.append('filter', `${(sortOrder === 'up' && 'cheaper') || (sortOrder === 'down' && 'expensive')}`);
+
+	const url = 'https://grocceries.herokuapp.com/' + category + '/?' + params.toString();
+
+	const response = await fetch(url);
+	const raw: Array<{
+		_id: number | string,
+		title: string,
+		link: string,
+		pictureLink: string,
+		shopName: string,
+		weight: number,
+		pricePerKg: number,
+	}> = await response.json();
+
+	const data: GoodType[] = raw.map(rawGood => ({
+		id: rawGood._id,
+		title: rawGood.title,
+		link: rawGood.link,
+		pictureLink: rawGood.pictureLink,
+		pricePerKg: Math.round(rawGood.pricePerKg),
+		shopName: rawGood.shopName,
+		weight: rawGood.weight,
+	}));
 
 	return data;
 }

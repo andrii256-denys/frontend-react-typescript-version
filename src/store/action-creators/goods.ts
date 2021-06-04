@@ -43,12 +43,13 @@ export const fetchGoods = () => {
 		try {
 			const state = getState();
 			const minPrice = state.filters.price.min;
-			const maxPrice = state.filters.price.max;
-			const shops = state.filters.shops.filter(shop => shop.allowed).map(shop => shop.id);
+			const maxPrice = state.filters.price.max;			
+			const shops = state.filters.shops.filter(shop => !shop.allowed).map(shop => shop.humanName);
 			const sortDirection = state.filters.sortDirection;
+			const category = state.navigation.currentTab;
 
 			const dataFromServer = await getGoods(
-				minPrice, maxPrice, shops, sortDirection,
+				minPrice, maxPrice, shops, sortDirection, category,
 			);
 
 			dispatch({

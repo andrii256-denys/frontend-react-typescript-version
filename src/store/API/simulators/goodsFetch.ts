@@ -61,15 +61,6 @@ export const goodsFetch = (url: string) => {
 				title: 'Сопілка'
 			},
 			{
-				id: 3,
-				pictureLink: 'http://images.huffingtonpost.com/2015-07-08-1436374933-6373539-Buckwheat_600_x_450.jpg',
-				pricePerKg: 20,
-				shopName: 'Сільпо',
-				weight: 800,
-				link: 'https://www.google.com/',
-				title: 'Бджолина'
-			},
-			{
 				id: 4,
 				pictureLink: 'http://images.huffingtonpost.com/2015-07-08-1436374933-6373539-Buckwheat_600_x_450.jpg',
 				pricePerKg: 100,

@@ -3,6 +3,7 @@
 .Goods {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: masonry;
 	gap: 35px 15px;
 	justify-content: space-between;
 	margin-bottom: 70px;

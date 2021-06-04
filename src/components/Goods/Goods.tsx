@@ -21,8 +21,8 @@ const Good: React.FunctionComponent<GoodProps> = ({ isLoading, link, pictureLink
 				<div className="Good__illustration-wrapper">
 					<img src={pictureLink} alt={`ілюстрація до товару з назвою ${title}`} className="Good__image" width="100%" height="170px" />
 				</div>
-				<h3 className="Good__title">
-					{title}
+				<h3 className="Good__title" title={title}>
+					{title.length < 38 ? title : (title.slice(0, 35) + '...')}
 				</h3>
 				<p className="Good__info-row">
 					<span className="Good__producer">{shopName}</span>
@@ -51,26 +51,35 @@ export const Goods: React.FunctionComponent = () => {
 	useEffect(() => {
 		fetchGoods();
 	},
-	[currentTab])
+		[currentTab])
 
 	return (
 		<ul className={classNames({
 			'Goods': true,
-			'Goods--error': goods.isError,
+			'Goods--error': goods.isError || !goodsList.length,
 		})}>
-			{!goods.isError && goodsList.map(good => (
-				<Good
-					key={good.id}
-					isLoading={goods.isLoading}
-					id={good.id}
-					link={good.link}
-					title={good.title}
-					pictureLink={good.pictureLink}
-					pricePerKg={good.pricePerKg}
-					shopName={good.shopName}
-					weight={good.weight}
-				/>
-			))}
+			{!goods.isError && (
+				goodsList.length ? (
+					goodsList.map(good => (
+						<Good
+							key={good.id}
+							isLoading={goods.isLoading}
+							id={good.id}
+							link={good.link}
+							title={good.title}
+							pictureLink={good.pictureLink}
+							pricePerKg={good.pricePerKg}
+							shopName={good.shopName}
+							weight={good.weight}
+						/>
+					))
+				) : (
+					<div className="Goods__error-message">
+						Ми не змогли знайти для вас товари.
+						<br />Змініть будь ласка фільтри⚙
+					</div>
+				)
+			)}
 			{goods.isError && (
 				<div className="Goods__error-message">
 					Упс, щось пішло не туди😢
