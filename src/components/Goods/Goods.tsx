@@ -26,7 +26,7 @@ const Good: React.FunctionComponent<GoodProps> = ({ isLoading, link, pictureLink
 				</h3>
 				<p className="Good__info-row">
 					<span className="Good__producer">{shopName}</span>
-					<span className="Good__portion">${weight} г / упакова</span>
+					<span className="Good__portion">{weight} г / упакова</span>
 				</p>
 				<p className="Good__price">
 					<span className="Good__price-big">{pricePerKg}</span>
