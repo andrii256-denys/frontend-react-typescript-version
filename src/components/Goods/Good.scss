@@ -59,6 +59,8 @@
 		height: 2 * $line-height;
 		padding: 0 15px;
 		margin-top: 25px;
+
+		overflow: hidden;
 	}
 
 	&__info-row {
