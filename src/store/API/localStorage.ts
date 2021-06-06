@@ -16,9 +16,6 @@ export const checkIsDataActual = (name: string) => {
 	let releaseMoment: number | string | undefined = process.env.REACT_APP_REALEASE_MOMENT;
 	releaseMoment = releaseMoment ? +releaseMoment : Date.now();
 
-	console.log('releaseMoment', new Date(releaseMoment));
-	console.log('pastSavingMoment', new Date(pastSavingMoment));
-
 	return pastSavingMoment > releaseMoment;
 }
 
