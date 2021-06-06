@@ -20,7 +20,7 @@ export const Footer: React.FunctionComponent = () => (
 				source код
 				&nbsp;
 				<a
-					href="https://github.com/andrii256-denysVarenik/"
+					href="https://github.com/andrii256-denysVarenik/groceries-back"
 					target="_blank"
 					rel="noreferer noopener"
 					className="Footer__source-code-link">
