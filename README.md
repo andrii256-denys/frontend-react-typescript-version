@@ -1,3 +1,10 @@
+# How to see demo
+You can find it on https://github.com/andrii256-denysVarenik/grocceries-front
+\* Pay Attentiion: we use free hosting so it can take a while before hosting start (so be patient, it will open).
+\* There can be bugs with data, but it's because of back-end side (there are parser and Denys dont update it, but retailers update their sites so it becames buggable)
+
+# Default stuff from create-react-app
+
 Idease <br>
 1. implement different stuff in scss into sass loops.
 
