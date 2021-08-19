@@ -5,10 +5,6 @@ You can find it on https://github.com/andrii256-denysVarenik/grocceries-front
 
 # Default stuff from create-react-app
 
-Idease <br>
-1. implement different stuff in scss into sass loops.
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
